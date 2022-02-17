@@ -16,13 +16,13 @@ void countSort(int* mas, int n) {
             m = mas[i];
     }
 
-    for(int i = m; i < M; i++) c[i] = 0;
+    for(int i = m; i <= M; i++) c[i] = 0;
 
     for(int j = 0; j < n; j++){
         int k = mas[j];
         c[k] = c[k]+1;
     }
-    for(int i = m+1; i<M; i++){
+    for(int i = m+1; i <= M; i++){
         c[i] += c[i-1];
     }
     for(int j = 0; j < n; j++){
