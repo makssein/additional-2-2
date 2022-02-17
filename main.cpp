@@ -23,11 +23,12 @@ void countSort(int* mas, int n) {
         c[k] = c[k]+1;
     }
     for(int i = m+1; i<M; i++){
-        c[i] = c[i-1];
+        c[i] += c[i-1];
     }
     for(int j = 0; j < n; j++){
         int k = mas[j];
         y[c[k-1]] = mas[j];
+        c[k]--;
     }
     for(int j = 0; j < n; j++) mas[j] = y[j];
 }
