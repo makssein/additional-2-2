@@ -3,7 +3,7 @@
 
 void countSort(int* mas, int n) {
     int y[10];
-    int c[10];
+    int c[100];
     int m = mas[0];
     int M = mas[1];
 
