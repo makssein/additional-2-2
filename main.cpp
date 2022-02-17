@@ -5,14 +5,24 @@ void countSort(int* mas, int n) {
     int y[10];
     int c[10];
     int m = mas[0];
+    int M = mas[1];
 
-    for(int i = 0; i < m; i++) c[i] = 0;
+    for (int i = 0; i < n; i++) {
+        if (mas[i] > M)
+            M = mas[i];
+    }
+    for (int i = 0; i < n; i++) {
+        if (mas[i] < m)
+            m = mas[i];
+    }
+
+    for(int i = m; i < M; i++) c[i] = 0;
 
     for(int j = 0; j < n; j++){
-         int k = mas[j];
-         c[k] = c[k]+1;
+        int k = mas[j];
+        c[k] = c[k]+1;
     }
-    for(int i = m+1; i<m; i++){
+    for(int i = m+1; i<M; i++){
         c[i] = c[i-1];
     }
     for(int j = 0; j < n; j++){
