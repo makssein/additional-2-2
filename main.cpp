@@ -27,7 +27,7 @@ void countSort(int* mas, int n) {
     }
     for(int j = 0; j < n; j++){
         int k = mas[j];
-        y[c[k-1]] = mas[j];
+        y[c[k]-1] = mas[j];
         c[k]--;
     }
     for(int j = 0; j < n; j++) mas[j] = y[j];
